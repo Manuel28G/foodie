@@ -2,14 +2,12 @@ import React from "react";
 import { TouchableOpacity, View, Text, Image } from "react-native";
 import { styles } from "./styles";
 
-function onSelected(item) {}
-
-const CardItem = ({ item }) => {
+const CardItem = ({ item, setSelectedItem }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={{ ...styles.containerTouchable, backgroundColor: item.color }}
-        onPress={() => onSelected(item)}
+        onPress={() => setSelectedItem(item)}
       >
         <View style={styles.store}>
           <Text style={styles.title}>Tienda</Text>
