@@ -1,7 +1,7 @@
 import { useFonts } from "expo-font";
 import React from "react";
 import { ActivityIndicator } from "react-native";
-import Home from "./src/screens/home";
+import AppNavigator from "./src/navigation";
 
 export default function App() {
   const [loaded] = useFonts({
@@ -16,5 +16,5 @@ export default function App() {
     return <ActivityIndicator />;
   }
 
-  return <Home />;
+  return <AppNavigator />;
 }

@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, FlatList } from "react-native";
 import CardItem from "../../components/organisms/card-item";
 import { reviews } from "../../data/Reviews";
-import ReviewDetail from "../review-detail";
 import { styles } from "./styles";
 
-function Home() {
-  const [selectedItem, setSelectedItem] = useState(null);
+function Home({ navigation }) {
+  function onSelectItem(item) {
+    navigation.navigate("ReviewDetail", {
+      item: item,
+      title: item.store,
+    });
+  }
 
-  const list = (
+  return (
     <View style={styles.container}>
       <FlatList
         data={reviews}
-        renderItem={({ item, index, separators }) => (
-          <CardItem setSelectedItem={setSelectedItem} item={item} />
+        renderItem={({ item }) => (
+          <CardItem setSelectedItem={onSelectItem} item={item} />
         )}
         keyExtractor={(item) => item.id}
       />
     </View>
   );
-  const reviewDetail = <ReviewDetail item={selectedItem} />;
-
-  return selectedItem === null ? list : reviewDetail;
 }
 
 export default Home;
