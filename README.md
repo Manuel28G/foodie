@@ -29,3 +29,12 @@ Feature "Add a review"!
 ![image](https://user-images.githubusercontent.com/9160046/183326892-5e3280ed-6e94-46de-aaa6-78d58e22496f.png)
 
 ![image](https://user-images.githubusercontent.com/9160046/183326950-dab22bab-ca97-41a9-9104-16732a5a38e2.png)
+
+Feature "Home"
+
+![image](https://user-images.githubusercontent.com/9160046/183330657-927bba91-c0ba-4d81-91d6-c164d5cfae49.png)
+
+
+Feature "Search" [WIP]
+
+Note:  Is not implemented yet because is out of scope of final challenge
