@@ -1,26 +1,27 @@
 import { useFonts } from "expo-font";
-import React from "react";
+import React, { useState } from "react";
 import { Provider } from "react-redux";
-import { ActivityIndicator } from "react-native";
 import AppNavigator from "./src/navigation";
 import store from "./src/store";
+import Splash from "./src/screens/splash";
 
 export default function App() {
-  const [loaded] = useFonts({
-    "Lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
-    "Lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
-    "Lato-Light": require("./assets/fonts/Lato-Light.ttf"),
-    "Lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
-    "Lato-Thin": require("./assets/fonts/Lato-Thin.ttf"),
-  });
+  const [loaded, setLoaded] = useState(
+    useFonts({
+      PatrickHand: require("./assets/fonts/PatrickHand-Regular.ttf"),
+      "Lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
+      "Lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
+    })
+  );
 
-  if (!loaded) {
-    return <ActivityIndicator />;
+  if (loaded) {
+    setTimeout(() => setLoaded(false), 2000);
+    return <Splash />;
   }
 
   return (
     <Provider store={store}>
-      <AppNavigator />;
+      <AppNavigator />
     </Provider>
   );
 }

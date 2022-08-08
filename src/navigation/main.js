@@ -10,7 +10,7 @@ const isIOS = Platform.OS === "ios";
 const MainNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Categories"
+      initialRouteName="Home"
       screenOptions={{
         headerStyle: {
           backgroundColor: isIOS ? colors.secondary : colors.primary,
