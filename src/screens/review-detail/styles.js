@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../constants/themes/colors";
 
 export const styles = StyleSheet.create({
   container: {
     width: "100%",
+    backgroundColor: colors.primary,
   },
   title: {
     marginTop: 15,
@@ -13,6 +15,6 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 10,
     fontFamily: "PatrickHand",
-    color: "#B4B4B4",
+    color: colors.text,
   },
 });

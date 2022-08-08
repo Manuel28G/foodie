@@ -51,8 +51,6 @@ const AddPostScreen = ({ navigation }) => {
     return !tryToSend ? false : text?.length > 0 ? false : true;
   }
 
-  useEffect({}, [reviewAdded]);
-
   return (
     <View style={styles.container}>
       <Appbar.Header style={styles.header}>

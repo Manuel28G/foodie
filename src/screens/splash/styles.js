@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 48,
     marginBottom: 24,
-    fontFamily: "PatrickHand",
     color: colors.error,
   },
 });

@@ -62,16 +62,14 @@ function useFirebase() {
   async function getAllReviews(callback) {
     setIsLoading(true);
     const starCountRef = databaseRef(dataBaseRT, REVIEW_FOLER);
-    return onValue(
-      starCountRef,
-      (snapshot) => {
-        setIsLoading(false);
-        callback(snapshot.val());
-      },
-      {
-        onlyOnce: true,
-      }
-    );
+    return onValue(starCountRef, (snapshot) => {
+      setIsLoading(false);
+      let response = [];
+      snapshot.forEach((childSnapshot) => {
+        response.push(childSnapshot.val());
+      });
+      callback(response);
+    });
   }
 
   return { addReview, getAllReviews, uploadImage, isLoading };
